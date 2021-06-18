@@ -3,25 +3,25 @@ Game Rules
 
 Game rule is mainly based on https://www.unorules.com/, however, refer to the rules below for slight modification for the game program. 
 
-In this UNO game, there is at least 2 players and a maximum of 4 players. 
+In this UNO game, there is at least 2 groups and a maximum of 4 groups. Each group will have 2 players.
 
 The game starts from the first player in a clockwise direction. 
 
-The game ends when there is a winner if the player has the highest scores when there is empty draw pile or if the player has zero on hands cards. 
+The game ends when there is a winner if the group has the highest scores when there is empty draw pile or if the group has zero on hands cards or if the group is the only group left
 
-A player loses immediately when the number of on hands cards reach more than 10 which means the player will drop out of the games as soon it reaches 11 cards. 
+The group loses immediately when the number of on hands cards reach more than 10 which means the group will drop out of the games as soon it reaches 11 cards.
 
 For the decks in each gameplay, there should be a total of 40 cards including 20 number cards, 4 ‘Wild Draw Four’ cards, 4 ‘Wild’ cards, 4 ‘Draw Two’ cards, 4 ‘Skip’ cards and 4 ‘Reverse cards. 
 
-The scores of each player are based on: 
+The scores of each group are based on: 
 
--Face values (0-9 points each)	 for Number cards 
+-Face values (0-9 points each)	  for Number cards 
 
--20 Points each 			for ‘Draw Two’, ‘Skip’, ‘Reverse’ cards 
+-20 Points each 			            for ‘Draw Two’, ‘Skip’, ‘Reverse’ cards 
 
--50 Points each 			for ‘Wild’, ‘Wild Draw Four’ cards 
+-50 Points each 		            	for ‘Wild’, ‘Wild Draw Four’ cards 
 
-Each player initially starts with 5 cards. 
+Each group initially starts with 5 cards. 
 
 During playing a card, each player must match either by the number, colour, or the action on the cards. For example, if the discard pile has a blue card that is a 5, the player must place either a blue card or a card with a 5 on it.  
 
