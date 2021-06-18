@@ -376,6 +376,13 @@ void ContinueDrawCardTillValid(bool& winner_flag, Card& temp_card, Card& choose_
         cout << "Looks like you don't have any valid card in your hand\n";
         cout << "You need to draw one more card until you have at least 1 valid card\n";
         system("pause");
+
+        // Before drawing the next card, if reach more than 10 cards, break the while loop immediately
+        if (current_deck->getNumberOfHandCards() > MAXIMUM_CARD_NO) {
+
+            break;
+        }
+
         if (current_deck->showIndexLinkedListHead() == 0)
         {
             current_deck->clearIndexList();
@@ -384,16 +391,14 @@ void ContinueDrawCardTillValid(bool& winner_flag, Card& temp_card, Card& choose_
             cout << endl << endl;
             current_deck->showHandCards();
             current_deck->showValidCard(temp_card);
-        }
-        if (current_deck->getNumberOfHandCards() > 10) {
 
-            break;
-        }
-        if (drawpile.isEmpty()) {
-            winner_flag = true;
-            cout << "\nThe Draw Pile is now empty. Cannot draw more cards!" << endl;
-            system("pause");
-            break;
+            // If after drawing cards, deck is empty, break the while loop 
+            if (drawpile.isEmpty()) {
+                winner_flag = true;
+                cout << "\nThe Draw Pile is now empty. Cannot draw more cards!" << endl;
+                system("pause");
+                break;
+            }
         }
     }
 }
