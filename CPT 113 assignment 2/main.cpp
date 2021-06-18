@@ -70,13 +70,13 @@ int main() {
              // Repeatedly draw card if no valid card to be played
              ContinueDrawCardTillValid(winner_flag, temp_card, choose_card, drawpile, current_deck);
 
-             // If the draw card suddenly reach more than 10, remove group
-             if (current_deck->getNumberOfHandCards() > MAXIMUM_CARD_NO){
-                 CurrentGroupLose(temp_group, discardpile, groupsinplay);
+             // If the draw card suddenly reach more than 10 break out of if else statement
+             if (current_deck->getNumberOfHandCards() > 10) {
+                 break;
              }
-             // If continue to play only if the drawpile is not empty
-             else if (!drawpile.isEmpty()) {
-                 PlayValidCard(temp_card, choose_card, temp_group, discardpile, groupsinplay, current_deck);
+             // Prompt to choose cards and play the card to discard pile
+             else {
+                PlayValidCard(temp_card, choose_card, temp_group, discardpile, groupsinplay, current_deck);
              }
         }
 
@@ -282,8 +282,6 @@ void CheckActionCard(bool& winner_flag, Card& temp_card, Group& temp_group, Draw
                 drawpile.popCard(temp_card);
                 // Immediately stop drawing drawing card if drawpile is empty
                 if (drawpile.isEmpty()) {
-                    cout << "\nThe Draw Pile is now empty. Cannot draw more cards!" << endl;
-                    system("pause");
                     winner_flag = true;
                     break;
                 }
@@ -296,8 +294,6 @@ void CheckActionCard(bool& winner_flag, Card& temp_card, Group& temp_group, Draw
                 drawpile.popCard(temp_card);
                 // Immediately stop drawing drawing card if drawpile is empty
                 if (drawpile.isEmpty()) {
-                    cout << "\nThe Draw Pile is now empty. Cannot draw more cards!" << endl;
-                    system("pause");
                     winner_flag = true;
                     break;
                 }
@@ -380,19 +376,16 @@ void ContinueDrawCardTillValid(bool& winner_flag, Card& temp_card, Card& choose_
         {
             current_deck->clearIndexList();
             drawpile.popCard(choose_card);
+            if (drawpile.isEmpty()) {
+                winner_flag = true;
+                break;
+            }
             current_deck->drawCard(choose_card);
             cout << endl << endl;
             current_deck->showHandCards();
             current_deck->showValidCard(temp_card);
         }
         if (current_deck->getNumberOfHandCards() > 10) {
-
-            break;
-        }
-        if (drawpile.isEmpty()) {
-            winner_flag = true;
-            cout << "\nThe Draw Pile is now empty. Cannot draw more cards!" << endl;
-            system("pause");
             break;
         }
     }
